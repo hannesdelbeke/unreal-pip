@@ -1,7 +1,6 @@
 """
 this module handles pip installation in unreal engine
 """
-# referenced https://filipsivak.medium.com/python-in-unreal-engine-the-undocumented-parts-7585434f5d76
 
 from pathlib import Path
 import subprocess
@@ -50,50 +49,6 @@ def _uninstall(package_names: list, short_args: list = None, long_args: list = N
         long_args=long_args,
         args=package_names,
     )
-
-
-# def _install(
-#         package_names: (set, list) = None,
-#         short_args: dict = None,
-#         long_args: dict = None,
-# ):
-#     """
-#     pip-install python packages in Unreal. Doesn't filter missing packages.
-#
-#     Args:
-#         package_names (set): names of PyPi packages to install
-#         short_args (dict): short arguments, e.g. {'-r': 'C:/requirements.txt'}
-#         long_args (dict): long arguments, e.g. {'--requirement': 'C:/requirements.txt'}
-#
-#     flags without value use an empty string
-#     wrap values in quotes if they contain spaces. e.g. {'-r': '"C:/program files/requirements.txt"'}
-#     """
-#
-#     _pip_cmd()
-#
-#
-#     short_args = short_args or {}
-#     long_args = long_args or {}
-#     _short_args = " ".join(f"-{k} {v}" for k, v in short_args.items())
-#     _long_args = " ".join(f"--{k}={v}" for k, v in long_args.items())
-#
-#     interpreter_path = get_python_interpreter_path()
-#
-#     # don't show window
-#     info = subprocess.STARTUPINFO()
-#     info.dwFlags |= subprocess.STARTF_USESHOWWINDOW
-#
-#     process = subprocess.Popen(
-#         [interpreter_path, '-m', 'pip', 'install', '--no-warn-script-location', *package_names],
-#         startupinfo=info,
-#         stdout=subprocess.PIPE,
-#         stderr=subprocess.PIPE,
-#         encoding="utf-8",
-#     )
-#     while process.poll() is None:
-#         unreal.log(process.stdout.readline().strip())
-#         unreal.log_warning(process.stderr.readline().strip())
-#     return process.poll()
 
 
 def _pip_cmd(
