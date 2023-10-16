@@ -1,4 +1,4 @@
-# unreal_pip
+# unreal pip
 pip wrapper to help installing modules / packages in unreal from pypi.
 
 - uses the unreal python interpreter
