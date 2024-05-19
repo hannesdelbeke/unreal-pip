@@ -1,3 +1,15 @@
+# Never pip install in Unreal! 😱  
+By default, `pip install numpy` from command prompt uses pip installed in `C:/Python37` (from your PATH) instead of the Unreal pip.  
+Even if you added the unreal pip to the path, you still have issues.
+It checks your site packages in local appdata instead of in the unreal folder.  
+You likely use  `pip install numpy --target "C:/unreal_project/Content/Python"` to install to a folder.
+This can result in duplicate Python packages installed, since pip doesn't check the unreal folders if the package is already installed.  
+
+Unreal pip addresses these problems:  
+- install location
+- correct dependency management (avoid duplicate installs)
+- use correct pip (python version)
+
 # unreal pip
 pip wrapper to help installing modules / packages in unreal from pypi.
 
