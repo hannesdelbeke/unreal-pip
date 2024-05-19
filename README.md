@@ -26,3 +26,6 @@ you can simply do:
 import unreal_pip
 unreal_pip.install(['pyside2'])
 ```
+
+## Install
+simply copy the `unreal_pip` folder in your unreal site packages path.
